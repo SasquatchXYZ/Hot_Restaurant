@@ -1,0 +1,24 @@
+{
+  "name": "Hot_Restaurant",
+  "version": "1.0.0",
+  "description": "Class Activity using Node &amp; Express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SasquatchXYZ/Hot_Restaurant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SasquatchXYZ/Hot_Restaurant/issues"
+  },
+  "homepage": "https://github.com/SasquatchXYZ/Hot_Restaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
