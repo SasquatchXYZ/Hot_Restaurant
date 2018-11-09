@@ -50,7 +50,9 @@
                     <h5>Table List</h5>
                 </div>
                 <div class="card-body">
+                    <ul id="table-section" class="list-group">
 
+                    </ul>
                 </div>
             </div>
         </div>
@@ -63,14 +65,43 @@
                     <h5>Waiting List</h5>
                 </div>
                 <div class="card-body">
+                    <ul id="waiting-section" class="list-group">
 
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
+<script type="text/javascript">
+    $.get("/api/tables", function(data) {
+        for (let k = o; k < data.length; k++) {
+            console.log(data[k]);
+            let listGroupItem = $(`<li class="list-group-item">`);
+
+            listGroupItem.append("<h2>").text(`Name: ${data[k].name}`);
+            listGroupItem.append("<h3>").text(`Phone Number: ${data[k].phoneNumber}`);
+            listGroupItem.append("<h3>").text(`Email: ${data[k].email}`);
+            listGroupItem.append("<h3>").text(`Unique ID: ${data[k].uniqueID}`);
+
+            $("#table-section").append(listGroupItem);
+        }
+    });
+
+    $.get("/api/waiting", function(data) {
+        for (let k = o; k < data.length; k++) {
+            console.log(data[k]);
+            let listGroupItem = $(`<li class="list-group-item">`);
+
+            listGroupItem.append("<h2>").text(`Name: ${data[k].name}`);
+            listGroupItem.append("<h3>").text(`Phone Number: ${data[k].phoneNumber}`);
+            listGroupItem.append("<h3>").text(`Email: ${data[k].email}`);
+            listGroupItem.append("<h3>").text(`Unique ID: ${data[k].uniqueID}`);
+
+            $("#waiting-section").append(listGroupItem);
+        }
+    });
 
 </script>
 

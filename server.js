@@ -8,7 +8,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
+const tables = [];
 
+const waiting = [];
 
 
 
@@ -27,6 +29,19 @@ app.get('/view', function(req, res) {
     res.sendFile(path.join(__dirname, 'view.html'));
 });
 
+
+app.post("/api/reservations", function(req, res) {
+    let newreservation = req.body;
+    newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
+    console.log(newreservation);
+    if (tables.length < 5) {
+        tables.push(newreservation);
+        res.json(newreservation)
+    } else {
+        waiting.push(newreservation);
+        res.json(newreservation)
+    }
+});
 
 // Start Server =========================================================================
 app.listen(PORT, function() {
