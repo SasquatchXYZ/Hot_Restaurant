@@ -29,6 +29,14 @@ app.get('/view', function(req, res) {
     res.sendFile(path.join(__dirname, 'view.html'));
 });
 
+app.get('/api/tables', function(req, res) {
+    return res.json(tables)
+});
+
+app.get('/api/waiting', function(req, res) {
+    return res.json(waiting)
+});
+
 
 app.post("/api/reservations", function(req, res) {
     let newreservation = req.body;
