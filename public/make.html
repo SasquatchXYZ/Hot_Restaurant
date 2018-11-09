@@ -81,7 +81,7 @@
 </div>
 
 <script type="text/javascript">
-    $("#reserve-btn").on("click", function(event){
+    $("#reserve-btn").on("click", function (event) {
         event.preventDefault();
 
         let newReservation = {
@@ -92,7 +92,7 @@
         };
 
         $.post("/api/reservations", newReservation)
-            .then(function(data) {
+            .then(function (data) {
                 console.log("add.html", data);
 
             });
