@@ -5,7 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const tables = [];
@@ -29,6 +29,8 @@ app.get('/view', function(req, res) {
     res.sendFile(path.join(__dirname, 'view.html'));
 });
 
+
+
 app.get('/api/tables', function(req, res) {
     return res.json(tables)
 });
@@ -36,6 +38,7 @@ app.get('/api/tables', function(req, res) {
 app.get('/api/waiting', function(req, res) {
     return res.json(waiting)
 });
+
 
 
 app.post("/api/reservations", function(req, res) {

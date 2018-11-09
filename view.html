@@ -31,12 +31,12 @@
                 <hr>
                 <h3>Book Your Seat Before They Are All Gone!</h3>
                 <a href="/">
-                    <button type="submit" class="btn btn-warning btn-md" id="home_button"><span
+                    <button class="btn btn-warning btn-md" id="home_button"><span
                             class="fas fa-house-damage"></span> Home
                     </button>
                 </a>
                 <a href="/make">
-                    <button type="submit" class="btn btn-danger btn-md" id="make_button"><span
+                    <button class="btn btn-danger btn-md" id="make_button"><span
                             class="fas fa-credit-card"></span> Make Reservation
                     </button>
                 </a>
@@ -82,10 +82,12 @@
 
             let listGroupItem = $("<li class='list-group-item'>");
 
-            listGroupItem.append("<h2>").text(`Name: ${data[k].name}`);
-            listGroupItem.append("<h3>").text(`Phone Number: ${data[k].phoneNumber}`);
-            listGroupItem.append("<h3>").text(`Email: ${data[k].email}`);
-            listGroupItem.append("<h3>").text(`Unique ID: ${data[k].uniqueID}`);
+            listGroupItem.append(
+                $("<h2>").text(`Name: ${data[k].name}`),
+                $("<h3>").text(`Phone Number: ${data[k].phoneNumber}`),
+                $("<h3>").text(`Email: ${data[k].email}`),
+                $("<h3>").text(`Unique ID: ${data[k].uniqueID}`),
+            );
 
             $("#table-section").append(listGroupItem);
         }
@@ -96,10 +98,12 @@
             console.log(data[k]);
             let listGroupItem = $("<li class='list-group-item'>");
 
-            listGroupItem.append("<h2>").text(`Name: ${data[k].name}`);
-            listGroupItem.append("<h3>").text(`Phone Number: ${data[k].phoneNumber}`);
-            listGroupItem.append("<h3>").text(`Email: ${data[k].email}`);
-            listGroupItem.append("<h3>").text(`Unique ID: ${data[k].uniqueID}`);
+            listGroupItem.append(
+                $("<h2>").text(`Name: ${data[k].name}`),
+                $("<h3>").text(`Phone Number: ${data[k].phoneNumber}`),
+                $("<h3>").text(`Email: ${data[k].email}`),
+                $("<h3>").text(`Unique ID: ${data[k].uniqueID}`),
+            );
 
             $("#waiting-section").append(listGroupItem);
         }

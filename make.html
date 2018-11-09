@@ -31,12 +31,12 @@
                 <hr>
                 <h3>Book Your Seat Before They Are All Gone!</h3>
                 <a href="/view">
-                    <button type="submit" class="btn btn-primary btn-md" id="view_button"><span
+                    <button class="btn btn-primary btn-md" id="view_button"><span
                             class="fas fa-clipboard-list"></span> View Tables
                     </button>
                 </a>
                 <a href="/">
-                    <button type="submit" class="btn btn-warning btn-md" id="home_button"><span
+                    <button class="btn btn-warning btn-md" id="home_button"><span
                             class="fas fa-house-damage"></span> Home
                     </button>
                 </a>
@@ -90,8 +90,6 @@
             email: $("#email").val().trim(),
             uniqueID: $("#unique_id").val().trim(),
         };
-
-        console.log(newReservation);
 
         $.post("/api/reservations", newReservation)
             .then(function(data) {
