@@ -14,7 +14,7 @@ module.exports = function (app) {
 
     app.post("/api/reservations", function (req, res) {
         let newreservation = req.body;
-        newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
+        //newreservation.routeName = newreservation.name.replace(/\s+/g, "").toLowerCase();
         console.log(newreservation);
 
         if (tableData.length < 5) {
